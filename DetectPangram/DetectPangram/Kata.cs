@@ -8,6 +8,8 @@ public static class Kata
 {
     public static bool IsPangram( string str )
     {
-        return false;
+        var charList = Enumerable.Range( 'a' , 'z' - 'a' + 1 ).Select( c => (char) c ).ToList();
+
+        return ! charList.Except( str.ToLower() ).Any();
     }
 }
